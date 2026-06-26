@@ -1,4 +1,4 @@
-1) Download Python 3.11.2 
+1) Download Python 3.11.2
 2) Create Virtual Environement
         -> python -m venv .logLensVenv
 3) Activate Virtual Environement
@@ -9,6 +9,6 @@
 
 How to Setup mcpInspector ?
 1) Install nodeJs
-2)  $env:Path     Run this command inside the actvated pyton venv if found C:\Program Files\nodejs\ then you are good to go else run this command $env:Path += ";C:\Program Files\nodejs\" 
+2)  $env:Path     Run this command inside the actvated pyton venv if found C:\Program Files\nodejs\ then you are good to go else run this command $env:Path += ";C:\Program Files\nodejs\"
 
 3) npx @modelcontextprotocol/inspector python main.py run this command

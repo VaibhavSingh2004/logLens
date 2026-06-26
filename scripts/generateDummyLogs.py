@@ -98,9 +98,7 @@ def generate_log(path: str, lines: int = 500_000):
     current = datetime(2026, 6, 26, 9, 0, 0)
 
     with open(path, "w", encoding="utf-8") as f:
-
         for i in range(lines):
-
             current += timedelta(milliseconds=random.randint(50, 5000))
 
             r = random.random()

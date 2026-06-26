@@ -11,4 +11,4 @@ wheels/
 .logLensVenv
 
 # Log Files
-logs/logLens.log
+*.log
