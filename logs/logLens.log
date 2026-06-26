@@ -1,0 +1,51 @@
+2026-06-26 01:50:08 | INFO     | __main__ | main:8 | Application Started
+2026-06-26 01:50:57 | [32mINFO    [0m | __main__ | main:8 | Application Started
+2026-06-26 01:51:21 | [32mINFO    [0m | __main__ | main:8 | Application Started
+2026-06-26 01:53:34 | [32mINFO    [0m | __main__ | main:8 | Application Started
+2026-06-26 01:54:41 | [0m[0m[32mINFO    [0m[0m[0m | __main__ | main:8 | Application Started
+2026-06-26 01:56:45 | INFO     | __main__ | main:8 | Application Started
+
+
+2026-06-26 02:13:26 | INFO     | __main__ | main:10 | Application Started
+2026-06-26 02:13:26 | INFO     | core.logReader | read_directory:76 | Scanning directory: sampleLogs
+2026-06-26 02:13:26 | INFO     | core.logReader | read_file:29 | Reading log file: sampleLogs\application.log
+2026-06-26 02:13:26 | INFO     | core.logReader | read_file:38 | Loaded 75 log lines.
+2026-06-26 02:13:26 | INFO     | core.logReader | read_file:29 | Reading log file: sampleLogs\production.log
+2026-06-26 02:13:26 | INFO     | core.logReader | read_file:38 | Loaded 18 log lines.
+2026-06-26 02:13:26 | INFO     | core.logReader | read_directory:87 | Loaded 2 log file(s).
+2026-06-26 02:15:32 | INFO     | __main__ | main:10 | Application Started
+2026-06-26 02:15:32 | INFO     | core.logReader | read_directory:76 | Scanning directory: sampleLogs
+2026-06-26 02:15:32 | INFO     | core.logReader | read_file:29 | Reading log file: sampleLogs\application.log
+2026-06-26 02:15:32 | INFO     | core.logReader | read_file:38 | Loaded 75 log lines.
+2026-06-26 02:15:32 | INFO     | core.logReader | read_file:29 | Reading log file: sampleLogs\production.log
+2026-06-26 02:15:32 | INFO     | core.logReader | read_file:38 | Loaded 18 log lines.
+2026-06-26 02:15:32 | INFO     | core.logReader | read_directory:87 | Loaded 2 log file(s).
+2026-06-26 02:15:45 | INFO     | __main__ | main:10 | Application Started
+2026-06-26 02:15:45 | INFO     | core.logReader | read_directory:76 | Scanning directory: sampleLogs
+2026-06-26 02:15:45 | INFO     | core.logReader | read_file:29 | Reading log file: sampleLogs\application.log
+2026-06-26 02:15:45 | INFO     | core.logReader | read_file:38 | Loaded 75 log lines.
+2026-06-26 02:15:45 | INFO     | core.logReader | read_file:29 | Reading log file: sampleLogs\production.log
+2026-06-26 02:15:45 | INFO     | core.logReader | read_file:38 | Loaded 18 log lines.
+2026-06-26 02:15:45 | INFO     | core.logReader | read_directory:87 | Loaded 2 log file(s).
+2026-06-26 20:41:49 | INFO     | __main__ | main:10 | Starting LogLens MCP Server...
+2026-06-26 20:41:49 | INFO     | httpx | _send_single_request:1025 | HTTP Request: GET https://pypi.org/pypi/fastmcp/json "HTTP/1.1 200 OK"
+2026-06-26 20:55:16 | INFO     | __main__ | main:10 | Starting LogLens MCP Server...
+2026-06-26 20:55:16 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type SetLevelRequest
+2026-06-26 20:55:17 | INFO     | __main__ | main:10 | Starting LogLens MCP Server...
+2026-06-26 20:55:17 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type SetLevelRequest
+2026-06-26 20:55:22 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type ListToolsRequest
+2026-06-26 20:56:20 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type CallToolRequest
+2026-06-26 20:56:20 | INFO     | core.logReader | read_file:29 | Reading log file: E:\Programing_and_Notes\logLens\sampleLogs\application.log
+2026-06-26 20:56:20 | INFO     | core.logReader | read_file:38 | Loaded 75 log lines.
+2026-06-26 20:57:06 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type CallToolRequest
+2026-06-26 20:57:06 | INFO     | core.logReader | read_directory:76 | Scanning directory: E:\Programing_and_Notes\logLens\sampleLogs
+2026-06-26 20:57:06 | INFO     | core.logReader | read_file:29 | Reading log file: E:\Programing_and_Notes\logLens\sampleLogs\application.log
+2026-06-26 20:57:06 | INFO     | core.logReader | read_file:38 | Loaded 75 log lines.
+2026-06-26 20:57:06 | INFO     | core.logReader | read_file:29 | Reading log file: E:\Programing_and_Notes\logLens\sampleLogs\production.log
+2026-06-26 20:57:06 | INFO     | core.logReader | read_file:38 | Loaded 613525 log lines.
+2026-06-26 20:57:06 | INFO     | core.logReader | read_directory:87 | Loaded 2 log file(s).
+2026-06-26 20:58:05 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type ListToolsRequest
+2026-06-26 20:58:06 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type ListToolsRequest
+2026-06-26 20:58:06 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type ListToolsRequest
+2026-06-26 20:58:06 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type ListToolsRequest
+2026-06-26 20:58:06 | INFO     | mcp.server.lowlevel.server | _handle_request:733 | Processing request of type ListToolsRequest
