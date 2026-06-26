@@ -1,0 +1,75 @@
+2026-06-26 08:59:58 INFO GatewayService Starting LogLens production environment.
+2026-06-26 09:00:01 INFO AuthService User login successful user_id=1043 ip=192.168.1.10
+2026-06-26 09:00:03 INFO InventoryService Product lookup completed product_id=P1023
+2026-06-26 09:00:05 INFO PaymentService Payment initiated order_id=ORD10001 amount=1499
+2026-06-26 09:00:07 INFO NotificationService Sending payment confirmation email.
+2026-06-26 09:00:10 WARNING InventoryService Product stock below threshold product_id=P1023 remaining=5
+2026-06-26 09:00:14 INFO PaymentService Payment successful order_id=ORD10001
+2026-06-26 09:00:17 INFO ShippingService Shipment created shipment_id=SHIP2201
+2026-06-26 09:00:20 DEBUG CacheService Cache miss key=user:1043
+2026-06-26 09:00:22 INFO CacheService Cache populated key=user:1043
+2026-06-26 09:01:01 INFO AuthService User login successful user_id=2091 ip=192.168.1.11
+2026-06-26 09:01:08 INFO RecommendationService Generated recommendations user_id=2091
+2026-06-26 09:01:11 WARNING RecommendationService Response time exceeded threshold latency=920ms
+2026-06-26 09:01:15 ERROR PaymentService Payment gateway timeout order_id=ORD10002
+Traceback (most recent call last):
+  File "/app/payment.py", line 83, in process
+    gateway.charge()
+TimeoutError: Gateway timeout after 30 seconds
+
+2026-06-26 09:01:42 INFO PaymentService Retrying payment order_id=ORD10002
+2026-06-26 09:01:47 INFO PaymentService Payment successful order_id=ORD10002
+2026-06-26 09:02:10 INFO InventoryService Inventory synchronized warehouse=DELHI
+2026-06-26 09:02:18 DEBUG InventoryService SQL execution time=12ms
+2026-06-26 09:02:24 INFO Scheduler Daily cleanup job started.
+2026-06-26 09:02:45 INFO Scheduler Deleted 142 temporary files.
+2026-06-26 09:02:51 INFO Scheduler Daily cleanup completed.
+2026-06-26 09:03:02 INFO AuthService Password reset requested user_id=550
+2026-06-26 09:03:07 WARNING AuthService Multiple failed login attempts user_id=550
+2026-06-26 09:03:10 WARNING AuthService Multiple failed login attempts user_id=550
+2026-06-26 09:03:13 WARNING AuthService Multiple failed login attempts user_id=550
+2026-06-26 09:03:20 ERROR AuthService User account temporarily locked user_id=550
+2026-06-26 09:03:31 INFO NotificationService Sending account lock email.
+2026-06-26 09:04:02 INFO DatabaseService Opening database connection.
+2026-06-26 09:04:08 ERROR DatabaseService Connection pool exhausted.
+2026-06-26 09:04:09 ERROR DatabaseService Connection pool exhausted.
+2026-06-26 09:04:10 ERROR DatabaseService Connection pool exhausted.
+2026-06-26 09:04:15 WARNING DatabaseService Waiting for available connection.
+2026-06-26 09:04:18 INFO DatabaseService Connection restored.
+2026-06-26 09:05:01 INFO SearchService Searching query="wireless headphones"
+2026-06-26 09:05:02 INFO SearchService Returned 218 results.
+2026-06-26 09:05:18 DEBUG Elasticsearch Query execution time=14ms
+2026-06-26 09:05:26 WARNING Elasticsearch Cluster health yellow.
+2026-06-26 09:05:40 INFO Elasticsearch Replica allocation completed.
+2026-06-26 09:06:02 INFO ReportService Generating daily report.
+2026-06-26 09:06:11 INFO ReportService Report exported successfully.
+2026-06-26 09:06:30 INFO EmailService Connecting SMTP server.
+2026-06-26 09:06:34 ERROR EmailService SMTP authentication failed.
+Traceback (most recent call last):
+  File "/app/email.py", line 45, in connect
+    smtp.login(username, password)
+SMTPAuthenticationError: Invalid credentials
+
+2026-06-26 09:06:55 INFO EmailService Scheduling retry.
+2026-06-26 09:07:01 INFO HealthService CPU usage=61%
+2026-06-26 09:07:02 INFO HealthService Memory usage=72%
+2026-06-26 09:07:03 WARNING HealthService Disk usage=88%
+2026-06-26 09:07:08 ERROR HealthService Disk usage exceeded threshold=95%
+2026-06-26 09:07:18 INFO HealthService Cleanup started.
+2026-06-26 09:07:48 INFO HealthService Cleanup completed.
+2026-06-26 09:08:01 DEBUG CacheService Cache hit key=user:1043
+2026-06-26 09:08:02 DEBUG CacheService Cache hit key=user:2091
+2026-06-26 09:08:03 DEBUG CacheService Cache hit key=user:1043
+2026-06-26 09:08:04 DEBUG CacheService Cache hit key=user:1043
+2026-06-26 09:08:05 DEBUG CacheService Cache hit key=user:1043
+2026-06-26 09:08:10 INFO GatewayService Request completed status=200 duration=48ms
+2026-06-26 09:08:11 INFO GatewayService Request completed status=200 duration=52ms
+2026-06-26 09:08:12 INFO GatewayService Request completed status=500 duration=812ms
+2026-06-26 09:08:13 ERROR GatewayService Upstream service unavailable service=PaymentService
+2026-06-26 09:08:18 INFO GatewayService Circuit breaker opened.
+2026-06-26 09:08:28 INFO GatewayService Circuit breaker closed.
+2026-06-26 09:09:01 INFO NotificationService Push notification delivered user_id=1043
+2026-06-26 09:09:08 INFO NotificationService Email delivered user_id=2091
+2026-06-26 09:09:20 INFO Scheduler Backup job started.
+2026-06-26 09:09:55 INFO Scheduler Backup completed successfully.
+2026-06-26 09:10:00 INFO GatewayService Health check completed.
