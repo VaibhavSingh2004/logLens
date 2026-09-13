@@ -1,3 +1,4 @@
+from collections import deque
 from pathlib import Path
 from typing import Iterator
 
@@ -14,6 +15,7 @@ class LogReader:
         - Read a single log file
         - Read all log files from a directory
         - Stream large files line-by-line
+        - Tail the last N lines of a (possibly huge) file without loading it all
     """
 
     @staticmethod
@@ -32,7 +34,7 @@ class LogReader:
             logger.error("Log file not found: %s", file_path)
             raise FileNotFoundError(file_path)
 
-        with file_path.open("r", encoding="utf-8") as file:
+        with file_path.open("r", encoding="utf-8", errors="replace") as file:
             lines = file.readlines()
 
         logger.info("Loaded %d log lines.", len(lines))
@@ -55,9 +57,28 @@ class LogReader:
             logger.error("Log file not found: %s", file_path)
             raise FileNotFoundError(file_path)
 
-        with file_path.open("r", encoding="utf-8") as file:
+        with file_path.open("r", encoding="utf-8", errors="replace") as file:
             for line in file:
                 yield line.rstrip("\n")
+
+    @staticmethod
+    def tail_file(file_path: str | Path, n_lines: int = 200) -> list[str]:
+        """
+        Return the last `n_lines` of a file without reading the whole thing
+        into memory at once. Good for "what just happened" style questions
+        on multi-GB production logs.
+        """
+
+        file_path = Path(file_path)
+
+        logger.info("Tailing last %d line(s) of: %s", n_lines, file_path)
+
+        if not file_path.exists():
+            logger.error("Log file not found: %s", file_path)
+            raise FileNotFoundError(file_path)
+
+        with file_path.open("r", encoding="utf-8", errors="replace") as file:
+            return list(deque((line.rstrip("\n") for line in file), maxlen=n_lines))
 
     @staticmethod
     def read_directory(directory: str | Path) -> dict[str, list[str]]:
@@ -87,3 +108,29 @@ class LogReader:
         logger.info("Loaded %d log file(s).", len(logs))
 
         return logs
+
+    @staticmethod
+    def list_log_files(directory: str | Path) -> list[dict]:
+        """
+        List .log files in a directory with basic metadata, without reading
+        their contents. Useful for a lightweight "what's available" tool.
+        """
+
+        directory = Path(directory)
+
+        if not directory.exists():
+            logger.error("Directory not found: %s", directory)
+            raise FileNotFoundError(directory)
+
+        entries = []
+        for file in sorted(directory.glob("*.log")):
+            stat = file.stat()
+            entries.append(
+                {
+                    "name": file.name,
+                    "path": str(file.resolve()),
+                    "size_bytes": stat.st_size,
+                    "modified_at": stat.st_mtime,
+                }
+            )
+        return entries
